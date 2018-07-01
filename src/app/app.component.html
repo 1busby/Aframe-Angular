@@ -1,13 +1,75 @@
-<a-scene>
+<a-scene *ngIf="loaded">
 
+  <a-assets>
+    <img id="ice1" src="../assets/imgs/ice1.jpg">
+    <img id="sky1" src="../assets/imgs/sky1.jpg">
+    <img id="sky2" src="../assets/imgs/sky2.jpg">
+    <img id="tile1" src="../assets/imgs/tile1.png">
+    <img id="tile1-nrm" src="../assets/imgs/tile1-nrm.png">
+    <img id="stone1" src="../assets/imgs/stone1.png">
+    <img id="stone1-nrm" src="../assets/imgs/stone1-nrm.png">
+    <img id="granite-cliff" src="../assets/imgs/granite-cliff.png">
+    <img id="granite-cliff-nrm" src="../assets/imgs/granite-cliff-nrm.png">
+    <a-asset-item id="ufo-o" src="../assets/imgs/ufo.obj"></a-asset-item>
+    <a-asset-item id="ufo-m" src="../assets/imgs/ufo.mtl"></a-asset-item>
+    <!-- <a-asset-item id="catapult-o" src="../assets/imgs/Catapult.obj"></a-asset-item>
+    <a-asset-item id="catapult-m" src="../assets/imgs/Catapult.mtl"></a-asset-item> -->
+  </a-assets>
+
+  <a-sky
+  src="#sky2"
+  rotation="0 64 0">
+  </a-sky>
+
+  <a-entity
+  obj-model="obj: #ufo-o; mtl: #ufo-m"
+  position="0 3.2 -10"
+  scale="5 5 5">
+  </a-entity>
+
+  <a-plane
+  material="
+  color: #FFFFFF;
+  src: #tile1;
+  repeat: 500 500;
+  normal-map: #tile1-nrm;
+  normal-texture-repeat: 500 500"
+  rotation="-90 0 0"
+  scale="1000 1000 1"
+  ></a-plane>
+
+  <!-- <a-box color="#FFFFFF" src="../assets/imgs/granite-cliff.png" 
+    repeat="1 1" 
+    normal-map="../assets/imgs/granite-cliff-nrm.png" 
+    normal-texture-repeat="1 1"
+    normal-scale="1 -1" roughness="0.6" width="4" height="4" depth="4" position="-2 1.5 -9"
+    roughness="0.8"
+    scale="1 1 1">
+  </a-box>
+
+  <a-box material="color: #FFFFFF; 
+  src: #stone1; 
+  repeat: 2 2;
+  normal-map: #stone1-nrm;
+  normal-texture-repeat: 2 2;
+  normal-scale: 1 -1;
+  roughess: 0.8" 
+  width="4" height="4" depth="4" position="2 1.5 -9"
+  scale="1 1 1">
+  </a-box> -->
+
+  <!-- normal-map: ../assets/imgs/granite-cliff-nrm.png;
+  normal-texture-repeat:2 2;
+  normal-scale:1 -1; -->
   <!-- 2:1 aspect ratio -->
-  <a-box 
+  <!-- <a-box 
   color="#4CC3D9"
   width="4"
   height="2"
   depth="0.2"
   position="0 1 -7"
   rotation="90 0 0"
+  scale="1 1 2"
   >
     <a-circle 
     color="#333333"
@@ -20,7 +82,8 @@
   <a-circle 
   color="#FFC107"
   side="double"
-  position="-2 1 -7">
+  position="-2 1 -7"
+  scale="2 2 1">
   </a-circle>
 
   <a-cylinder 
@@ -28,10 +91,11 @@
   height="2"
   radius="2"
   segments-radial="7"
-  open-ended="true"
+  open-ended="true"d
   side="double"
   rotation="0 -90 90"
+  scale="2 1 2"
   >
 
-  </a-cylinder>
+  </a-cylinder> -->
 </a-scene>
