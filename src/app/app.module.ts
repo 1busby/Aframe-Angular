@@ -3,11 +3,13 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AframePipeModule } from 'angular-aframe-pipe';
 
 import { AppComponent } from './app.component';
+import { UfoComponent } from './ufo/ufo.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UfoComponent
   ],
   imports: [
     BrowserModule,

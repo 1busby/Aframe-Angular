@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('ufoEntity') ufoEntity: ElementRef
   loaded = false
+
+  ufoHeight = 10;
 
   ngOnInit() {
     this.loaded = true;
-    // setTimeout(() => {
-    //   this.loaded = true
-    // }, 5000);
   }
 
-  error(event) {
+  mouseEntered(event) {
+    
+  }
+
+  onError(event) {
     debugger
   }
 }

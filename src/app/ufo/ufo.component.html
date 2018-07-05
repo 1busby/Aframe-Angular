@@ -1,0 +1,21 @@
+<a-entity #entityContainer>
+
+  <a-entity id="ufo" obj-model="obj: #ufo-o; mtl: #ufo-m" [attr.position]="'0 10 -20'" [attr.scale]="'5 5 5' | aframe"  [attr.rotation]="'15 0 -5'" (mouseenter)="mouseEntered($event)">
+    <a-animation attribute="rotation" dur="600" fill="forwards" to="15 0 10" direction="alternate" repeat="indefinite"></a-animation>
+    <!-- <a-animation attribute="rotation" dur="2000" fill="forwards" to="0 0 20" direction="alternate" repeat="indefinite"></a-animation> -->
+  </a-entity>
+
+  <a-entity id="tyke" obj-model="obj: #tyke-o; mtl: #tyke-m" [attr.scale]="'0.2 0.2 0.2'" [attr.position]="'0 2 -20'">
+    <a-animation attribute="position" dur="3000" fill="forwards" to="0 1 -20" direction="alternate" repeat="indefinite"></a-animation>
+  </a-entity>
+
+
+  <a-entity [attr.light]="'type: spot;
+  target: null;
+  intensity: 0.8;
+  color: #4ad684;
+  angle: 29;
+  penumbra: 0.1'" [attr.position]="'0 10 -20'" [attr.rotation]="'-90 0 0'">
+  </a-entity>
+  
+</a-entity>

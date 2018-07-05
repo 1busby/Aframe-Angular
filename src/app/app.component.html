@@ -4,39 +4,52 @@
     <img id="ice1" src="../assets/imgs/ice1.jpg">
     <img id="sky1" src="../assets/imgs/sky1.jpg">
     <img id="sky2" src="../assets/imgs/sky2.jpg">
+    <img id="sky3" src="../assets/imgs/sky3.jpg">
     <img id="tile1" src="../assets/imgs/tile1.png">
     <img id="tile1-nrm" src="../assets/imgs/tile1-nrm.png">
-    <img id="stone1" src="../assets/imgs/stone1.png">
+    <!-- <img id="stone1" src="../assets/imgs/stone1.png">
     <img id="stone1-nrm" src="../assets/imgs/stone1-nrm.png">
     <img id="granite-cliff" src="../assets/imgs/granite-cliff.png">
-    <img id="granite-cliff-nrm" src="../assets/imgs/granite-cliff-nrm.png">
+    <img id="granite-cliff-nrm" src="../assets/imgs/granite-cliff-nrm.png"> -->
     <a-asset-item id="ufo-o" src="../assets/imgs/ufo.obj"></a-asset-item>
     <a-asset-item id="ufo-m" src="../assets/imgs/ufo.mtl"></a-asset-item>
+    <a-asset-item id="tyke-o" src="../assets/imgs/tyke.obj"></a-asset-item>
+    <a-asset-item id="tyke-m" src="../assets/imgs/tyke.mtl"></a-asset-item>
+    <a-asset-item id="mansion-o" src="../assets/imgs/3D Mansion_OBJ.obj"></a-asset-item>
+    <a-asset-item id="mansion-m" src="../assets/imgs/3D Mansion_OBJ.mtl"></a-asset-item>
     <!-- <a-asset-item id="catapult-o" src="../assets/imgs/Catapult.obj"></a-asset-item>
     <a-asset-item id="catapult-m" src="../assets/imgs/Catapult.mtl"></a-asset-item> -->
   </a-assets>
 
-  <a-sky
-  src="#sky2"
-  rotation="0 64 0">
+  <a-sky src="#sky3" rotation="0 64 0">
   </a-sky>
 
-  <a-entity
-  obj-model="obj: #ufo-o; mtl: #ufo-m"
-  position="0 3.2 -10"
-  scale="5 5 5">
+  <a-entity obj-model="obj: #mansion-o; mtl: #mansion-m" position="-10 0 -130" scale="1 1 1">
   </a-entity>
 
-  <a-plane
-  material="
+  <a-camera>
+    <a-entity
+    cursor="fuse: true"
+    position="0 0 -1"
+    geometry="primitive: sphere; radius: 0.005"
+    material="color: #000000; shader: flat; opactity: 0.5">
+    </a-entity>
+  </a-camera>
+
+  <a-plane material="
   color: #FFFFFF;
   src: #tile1;
   repeat: 500 500;
   normal-map: #tile1-nrm;
-  normal-texture-repeat: 500 500"
-  rotation="-90 0 0"
-  scale="1000 1000 1"
-  ></a-plane>
+  normal-texture-repeat: 500 500" rotation="-90 0 0" scale="1000 1000 1"></a-plane>
+
+  <a-entity light="type: directional;
+  intensity: 0.5"
+  position="-0.5 1 1">
+  </a-entity>
+
+  <a-entity #ufoEntity></a-entity>
+  <app-ufo [hostElement]="ufoEntity"></app-ufo>
 
   <!-- <a-box color="#FFFFFF" src="../assets/imgs/granite-cliff.png" 
     repeat="1 1" 
