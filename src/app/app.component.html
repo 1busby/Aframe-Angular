@@ -1,4 +1,4 @@
-<a-scene *ngIf="loaded" physics="debug: true">
+<a-scene *ngIf="loaded">
 
   <a-assets>
     <img id="ice1" src="../assets/imgs/ice1.jpg">
@@ -27,7 +27,8 @@
     </a-entity>
   </a-camera>
 
-  <a-plane material="
+  <a-plane 
+  material="
   color: #FFFFFF;
   src: #tile1;
   repeat: 500 500;
@@ -40,7 +41,7 @@
   repeat="1 1" 
   normal-map="#granite-cliff-nrm" 
   normal-texture-repeat="1 1"
-  position="-1 0.5 -3" 
+  position="-1 20 -10" 
   rotation="0 45 0"
   (click)="boxMouseDown($event)"></a-box>
   
