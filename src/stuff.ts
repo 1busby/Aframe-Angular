@@ -31,8 +31,6 @@ export class AppComponent {
     z: 0
   }
 
-  boxIsGrabbed = false
-
   rotationUnsubscribe;
 
   constructor(private cd: ChangeDetectorRef) {
@@ -49,12 +47,10 @@ export class AppComponent {
       // Find the distance by finding the hypotenuse
       this.boxDistance = Math.sqrt(
         (cameraPosition.x - boxPosition.x) * (cameraPosition.x - boxPosition.x) +
-        (cameraPosition.z - boxPosition.z) * (cameraPosition.z - boxPosition.z)
+        (cameraPosition.y - boxPosition.y) * (cameraPosition.y - boxPosition.y)
       );
       let rotation = this.camera.nativeElement.getAttribute('rotation');
       console.log('camera: ', this.camera.nativeElement.getAttribute('rotation'));
-
-      
       
       if (boxPosition.y >= 0.5) {
         this.boxVelocity.y -= 9.8 / 30;
@@ -81,23 +77,20 @@ export class AppComponent {
   }
 
   boxMouseDown(event) {
-    this.boxIsGrabbed = true
-
-  //   this.rotatio'event: ', event)
-  //  nUnsubscribe = new Subject<any>();
-  //   const source = timer(1000, 1000);
-  //   console.log('camera: ', this.camera.nativeElement.getAttribute('position'))
-  //   console.log( const subscribe = source.pipe(takeUntil(this.rotationUnsubscribe)).subscribe(val => {
-  //     let rotation = this.camera.nativeElement.getAttribute('rotation')
-  //     console.log('camera: ', this.camera.nativeElement.getAttribute('rotation'));
+    // this.rotationUnsubscribe = new Subject<any>();
+    // const source = timer(1000, 1000);
+    // console.log('camera: ', this.camera.nativeElement.getAttribute('position'))
+    // console.log('event: ', event)
+    // const subscribe = source.pipe(takeUntil(this.rotationUnsubscribe)).subscribe(val => {
+    //   let rotation = this.camera.nativeElement.getAttribute('rotation')
+    //   console.log('camera: ', this.camera.nativeElement.getAttribute('rotation'));
       
-      // console.log(val);
-      // this.floatBox.nativeElement.setAttribute('position', `${val} 0.5 -3`)
-    });
+    //   // console.log(val);
+    //   // this.floatBox.nativeElement.setAttribute('position', `${val} 0.5 -3`)
+    // });
   }
 
-  boxMouseUp(event) {
-    this.boxIsGrabbed = false; 
+  boxMouseUp(event) { 
     // this.rotationUnsubscribe.next();
     // this.rotationUnsubscribe.complete();
   }
